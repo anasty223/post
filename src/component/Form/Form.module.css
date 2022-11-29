@@ -1,0 +1,74 @@
+.modalForm{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+    height: 150px;
+    padding: 10px;
+
+ 
+  }
+
+.containerForm{
+  display: flex;
+  justify-content:center;
+}
+  @media (min-width: 769px){
+    .modalForm{
+        width: 80%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .modalForm{
+        width: 40%;
+    }
+  }
+
+
+  .labelModal{
+      display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  color: #ffffff;
+  }
+  .inputModal{
+    width: 95%;
+    margin-top: 5px;
+         
+  }
+  .inputModal:focus{
+    outline: 3px solid #1ac7d2;
+    border: none;
+  }
+  .buttonAdd{
+    width: 40vw;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin-top:20px;
+  }
+  .buttonAdd:hover {
+    background-color: #cde2e5;
+  }
+  .buttonAdd:active {
+    color: #ffffff;
+    background-color: #b3c2c4;
+  }
+
+  @media (min-width: 769px) {
+   .buttonAdd{
+    width: 20vw;
+   }
+  }
+  @media (min-width: 1024px) {
+   .buttonAdd{
+    width: 10vw;
+   }
+  }

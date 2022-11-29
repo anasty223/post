@@ -1,0 +1,85 @@
+{
+    "posts": [
+      {
+        "title": "gg",
+        "author": "ggg",
+        "comments": "gggbbb",
+        "id": 1
+      },
+      {
+        "title": "ggg",
+        "author": "ggg",
+        "comments": "ggg",
+        "id": 2
+      },
+      {
+        "title": "xxx",
+        "author": "xxx",
+        "comments": "xxx",
+        "id": 3
+      },
+      {
+        "title": "4",
+        "author": "4",
+        "comments": "4",
+        "id": 4
+      },
+      {
+        "title": "Nastya",
+        "author": "nastaya",
+        "comments": "fgfhff",
+        "id": 5
+      },
+      {
+        "title": "aa",
+        "author": "aaa",
+        "comments": "aaa",
+        "id": 6
+      },
+      {
+        "title": "sss",
+        "author": "sss",
+        "comments": "sssss",
+        "id": 7
+      },
+      {
+        "title": "aaa",
+        "author": "aaa",
+        "comments": "aaa",
+        "id": 8
+      },
+      {
+        "title": "aaa",
+        "author": "aaa",
+        "comments": "aaa",
+        "id": 9
+      },
+      {
+        "title": "aaa",
+        "author": "aaa",
+        "comments": "aaa",
+        "id": 10
+      },
+      {
+        "title": "jhh",
+        "author": "hg",
+        "comments": "ff",
+        "id": 11
+      },
+      {
+        "title": "zzz",
+        "author": "z",
+        "comments": "z",
+        "id": 12
+      }
+    ],
+    "comments": [],
+    
+    "users": [
+      {
+        "email": "user@email.com",
+        "password": "$2a$10$TGpBQYJF6bQFEipnwaaoiuCRVht/.jAyrOYQnq8Xz5CvXYNu6O2LO",
+         "id": 1
+      }
+    ]
+  }
