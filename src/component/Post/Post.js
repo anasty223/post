@@ -6,7 +6,7 @@ import { ButtonLoadMore } from "../ButtonLoadMore/ButtonLoadMore ";
 import Form from "../Form/Form";
 import { Loader } from "../Loader/Loader";
 import Table from "../Table/Table";
-
+import s from "./Post.module.css"
 
 
 export default function Post() {
@@ -41,7 +41,7 @@ export default function Post() {
 
 
     return (
-    <>
+    <div className={s.containerTable}>
       <Form posts={data} />
 
       {data &&  <Table posts={getVisiblePost()} onDeletePost={deletePost} loadMore={handleLoadMore} />}
@@ -52,5 +52,5 @@ export default function Post() {
         <ButtonLoadMore  handleLoadMore={handleLoadMore} />
       )}
       
-    </>)
+    </div>)
 }

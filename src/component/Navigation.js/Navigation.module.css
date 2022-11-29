@@ -1,6 +1,7 @@
 .navigationContainer{
     display: flex;
     list-style: none;
+    justify-content: center
 }
 
 .navLink {
