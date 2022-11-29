@@ -1,4 +1,4 @@
-import TA from "./TA.jpg";
+import CVAnastasyaTrunova from "./CVAnastasyaTrunova.pdf";
 
 export default function Home() {
   return (
@@ -14,7 +14,8 @@ export default function Home() {
       <li> <a href="mailto:anasty22@gmail.com">anasty22@gmail.com</a></li>
       <li>  <a href="https://github.com/anasty223">GitHub</a></li>
       </ul>
-      <img src={TA} alt="my CV" style={{ width: 500, marginTop: 20 }} />
+      <object><embed src={CVAnastasyaTrunova} width="500" height="750" style={{  marginTop: 20 }}/></object>
+    
     </div>
   );
 }
