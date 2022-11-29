@@ -4,8 +4,8 @@ import { SuperLink, Container } from "./Layout.styles";
 export default function Layout() {
   return (
     <Container>
-      <SuperLink to="/">Home</SuperLink> |
-      <SuperLink to="/posts">Posts</SuperLink>
+      <SuperLink to="/">Post</SuperLink> |
+      <SuperLink to="/posts">Home</SuperLink>
       <Outlet />
     </Container>
   );
