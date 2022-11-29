@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <Suspense fallback={<div>...LOADING</div>}>
         <Routes>
-          <Route path="/" element={<Post />}>
-            {/* <Route index element={<Post/>} /> */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Post/>} />
 
             <Route path="/home" element={<Home/>} />
 
