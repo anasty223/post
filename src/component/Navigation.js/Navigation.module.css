@@ -17,6 +17,7 @@
 }
 
     .buttonNav, .buttonNav::after {
+      margin-left: 10px;
         width: 380px;
         height: 86px;
         font-size: 36px;
