@@ -1,4 +1,5 @@
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./component/NotFound";
@@ -9,7 +10,6 @@ const Post = lazy(() => import("./component/Post/Post"));
 
 
 
-// const Loader = lazy(() => import("./components/Loader/Loader"));
 
 function App() {
   return (
