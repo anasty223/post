@@ -37,7 +37,20 @@ const Navigation = () => {
          
                 </button>
               </li>
-             
+              <li >
+                <button type="button" className={style.buttonNav}>
+                 
+                    <NavLink
+                      to={"/animation"}
+                      className={({ isActive }) =>
+                        isActive ? style.activeStyle : style.navLink
+                      }
+                    >
+                  Animation
+                    </NavLink>
+         
+                </button>
+              </li>
             </ul>
     
       
