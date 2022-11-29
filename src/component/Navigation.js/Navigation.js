@@ -32,7 +32,7 @@ const Navigation = () => {
                         isActive ? style.activeStyle : style.navLink
                       }
                     >
-                      Home
+                      CV
                     </NavLink>
          
                 </button>
