@@ -39,16 +39,19 @@ h2{
 .flTtable td, .flTtable th {
     text-align: center;
     padding: 8px;
+    word-wrap:break-word;
 }
 
 .flTtable td {
     border-right: 1px solid #f8f8f8;
     font-size: 12px;
+    word-wrap:break-word;
 }
 
 .flTtable thead th {
     color: #ffffff;
     background: #4FC3A1;
+    word-wrap:break-word;
 }
 
 
@@ -100,6 +103,7 @@ h2{
         width: 120px;
         font-size: 13px;
         text-overflow: ellipsis;
+        word-wrap:break-word;
     }
     .flTtable thead th {
         text-align: left;

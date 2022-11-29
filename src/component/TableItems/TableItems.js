@@ -66,9 +66,10 @@ export default function TableItems({ title, author, id, func, comments }) {
       <tbody>
 
         <tr>
+        <td> {id}</td>
           <td>{title}</td>
           <td>{author}</td>
-          <td>{comments}</td>
+          <td style={{whiteSpace: "pre-wrap"}}><div >{comments}</div></td>
           <td>
 
             <button
@@ -125,13 +126,16 @@ export default function TableItems({ title, author, id, func, comments }) {
                 onChange={handleInputChange}
               />
             </label>
+       
             <label  className={s.labelModal}>
               Comment
-              <input
-                type="text"
-                name="comments"
+              <textarea
+                 className={s.inputModal}
+                 placeholder="text"
+                  type="text"
+                  name="comments"
                 value={newComments}
-                
+                maxlength="150"
                 required
                 onChange={handleInputChange}
               />

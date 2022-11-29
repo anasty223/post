@@ -104,7 +104,7 @@ export default function Form({ posts }) {
                 required
                 value={comments}
                 onChange={handleInputChange}
-                maxlength="50"
+                maxlength="150"
               />
               <button className={s.buttonAdd} type="submit">Add post</button>
             </label>

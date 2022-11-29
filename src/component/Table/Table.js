@@ -9,6 +9,7 @@ export default function Table({posts,onDeletePost}) {
 <table className={s.flTtable}>
 <thead>
         <tr>
+        <th>id of post</th>
             <th>Title</th>
             <th>Author</th>
             <th>Coments</th>
