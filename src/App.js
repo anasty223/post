@@ -28,7 +28,7 @@ function App() {
             <Route path="/animation" element={<Animation/>} />
 
 
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="/" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
