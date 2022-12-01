@@ -14,7 +14,7 @@ export const postApi = createApi({
     }),
     addPost: builder.mutation({
       query: (newPost) => ({
-        url: "/posts",
+        url: "/post",
         method: "POST",
         body: {
           title: newPost.title,

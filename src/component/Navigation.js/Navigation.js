@@ -1,5 +1,5 @@
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import style from "./Navigation.module.css";
 
 const Navigation = () => {
@@ -19,7 +19,7 @@ const Navigation = () => {
                       isActive ? style.activeStyle : style.navLink
                     }
                   >
-                   Post
+                   Home
                   </NavLink>
                 </button>
               </li>
@@ -27,12 +27,12 @@ const Navigation = () => {
                 <button type="button" className={style.buttonNav}>
                  
                     <NavLink
-                      to={"/home"}
+                      to={"/post"}
                       className={({ isActive }) =>
                         isActive ? style.activeStyle : style.navLink
                       }
                     >
-                      CV
+                      post
                     </NavLink>
          
                 </button>
@@ -55,6 +55,7 @@ const Navigation = () => {
     
       
       </nav>
+    <Outlet/>
     </>
   );
 };
