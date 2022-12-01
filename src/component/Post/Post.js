@@ -8,8 +8,8 @@ import { Loader } from "../Loader/Loader";
 import Navigation from "../Navigation.js/Navigation";
 import Table from "../Table/Table";
 import s from "./Post.module.css"
-import axios from "axios"
-import { Outlet } from "react-router-dom";
+import style from "./Post.module.css"
+import { NavLink, Outlet } from "react-router-dom";
 
 
 export default function Post() {
@@ -47,7 +47,7 @@ export default function Post() {
 
     return (
     <div className={s.containerTable}>
-    
+          <Navigation/>
       <Form posts={data} />
 
       {data &&  <Table posts={getVisiblePost()} onDeletePost={deletePost} loadMore={handleLoadMore} />}

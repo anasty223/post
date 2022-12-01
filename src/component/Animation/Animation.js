@@ -1,7 +1,11 @@
+import Navigation from "../Navigation.js/Navigation"
 import s from "./Animation.module.css"
 
 export default function Animation() {
-    return <div className={s.bike}>
+    return <>
+    <Navigation/>
+    <div className={s.bike}>
+      
     <div className={s.bike__cloud-1}></div>
     <div className={s.bike__cloud-2}></div>
     <div className={s.bike__cloud-3}></div>
@@ -77,4 +81,5 @@ export default function Animation() {
       </div>
     </div>    
   </div>
+    </>
 }

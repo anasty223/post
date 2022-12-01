@@ -1,14 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Navigation from "../Navigation.js/Navigation";
-import { SuperLink, Container } from "./Layout.styles";
+import {  Container } from "./Layout.styles";
+import { Suspense } from 'react';
 
 export default function Layout() {
   return (
     <Container>
-      <Navigation/>
-      {/* <SuperLink to="/">Posts</SuperLink> | */}
-      {/* <SuperLink to="/home">Home</SuperLink> */}
-      <Outlet />
+  {/* <Navigation/> */}
+
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+   
     </Container>
   );
 }

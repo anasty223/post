@@ -1,8 +1,18 @@
-import CVAnastasyaTrunova from "./CVAnastasyaTrunova.pdf";
 
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import Navigation from "../Navigation.js/Navigation";
+import CVAnastasyaTrunova from "./CVAnastasyaTrunova.pdf";
+import style from './Home.module.css'
 export default function Home() {
+  const location = useLocation();
+  const navigate = useNavigate();
   return (
     <div>
+
+
+
+
+       <Navigation/>
       <h3 style={{color:"#fff"}}>
         Contacts:(Viber, Telegram, WhatsApp)
        
