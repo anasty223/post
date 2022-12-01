@@ -19,7 +19,7 @@ const Navigation = () => {
                       isActive ? style.activeStyle : style.navLink
                     }
                   >
-                   Home
+                  CV
                   </NavLink>
                 </button>
               </li>
@@ -32,7 +32,7 @@ const Navigation = () => {
                         isActive ? style.activeStyle : style.navLink
                       }
                     >
-                      post
+                     Posts
                     </NavLink>
          
                 </button>

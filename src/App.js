@@ -37,3 +37,5 @@ function App() {
 }
 
 export default App;
+
+  // "homepage": "https://anasty223.github.io/post",

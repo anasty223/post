@@ -2,7 +2,7 @@
   "name": "post",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anasty223.github.io/post",
+
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@reduxjs/toolkit": "^1.9.0",
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify deploy -p",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
