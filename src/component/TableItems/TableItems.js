@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from "./TableItems.module.css"
 import { AiFillDelete } from "react-icons/ai";
 import { useUpdatePostMutation } from "../../redux/posts";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import Modal from "../Modal/Modal";
 import { Oval } from "react-loader-spinner";
 
@@ -63,6 +63,8 @@ export default function TableItems({ title, author, id, func, comments }) {
 
   return (
     <>
+
+        
       <tbody>
 
         <tr>
@@ -95,7 +97,6 @@ export default function TableItems({ title, author, id, func, comments }) {
        </td>
         </tr>
       </tbody>
-
 
      
 

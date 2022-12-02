@@ -13,9 +13,6 @@ export default function Form({ posts }) {
   const [comments, setComments] = useState("");
 
 
-
-  
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -50,6 +47,7 @@ export default function Form({ posts }) {
       toast(({ data }) => `Added ${title} in posts`, {
         data: "world",
       });
+      
         
     }
 

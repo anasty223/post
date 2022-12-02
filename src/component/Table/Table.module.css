@@ -34,7 +34,7 @@ h2{
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
- 
+ height: auto;
 
 }
 
@@ -130,5 +130,5 @@ h2{
 }
 .headerTable{
     color:#fff;
-    margin-top: 90px;
+    margin-top: 150px;
   }
