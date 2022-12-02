@@ -9,7 +9,7 @@ export const postApi = createApi({
 
   endpoints: (builder) => ({
     getPost: builder.query({
-      query: (page) => `posts?page=${page}&limit=5`,
+      query: (page=1) => `posts?page=${page}&limit=5`,
       providesTags: ["POST"],
     }),
     addPost: builder.mutation({
