@@ -9,13 +9,14 @@ import s from './Table.module.css'
 
 export default function Table({posts,onDeletePost,loadMore}) {
     const [page, setPage] = useState(1);
+      const [hasMore, setHasMore] = useState(true);
     const { data } = useGetPostQuery(page);
   
     const [isPending, setIsPending] = useState(false);
 
     const handleLoadMore = () => {
-        setPage((prevPage) => prevPage +  1);
-        // setHasMore(false)
+        setPage(page +  1);
+        setHasMore(false)
       };
     return <>
    <h1 className={s.headerTable}>Posts</h1>
@@ -24,8 +25,8 @@ export default function Table({posts,onDeletePost,loadMore}) {
   
 <table className={s.flTtable}>
 {<InfiniteScroll
-            dataLength={posts.length}
-            next={handleLoadMore}
+            dataLength={data.length}
+            next={ ()=> setPage(page +  1)}
             height={200}
             pullDownToRefreshThreshold={150}
             hasMore={true}

@@ -13,6 +13,7 @@ import EndMsg from "../EndMsg/EndMsg"
 
 export default function Post() {
   const [page, setPage] = useState(1);
+  
   const { data } = useGetPostQuery(page);
 
   const [isPending, setIsPending] = useState(false);
