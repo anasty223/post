@@ -1,14 +1,14 @@
 import s from "./Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
-import { useAddPostMutation } from "../../redux/posts";
+import { useAddPostMutation, useUpdatePostMutation } from "../../redux/posts";
 import { useState } from "react";
 import Filter from "../Filter/Filter";
 import Modal from "../ModalEnter/Modal";
 import { Oval } from "react-loader-spinner";
-
+import cat from "../ModalEnter/cat.jpg"
 
 export default function Form() {
-
+  const [updateContact, { id }] = useUpdatePostMutation();
   const [addPost] = useAddPostMutation();
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -43,7 +43,7 @@ export default function Form() {
     if(title.trim()==="" || author.trim() ==""){
 setIsshown(true);
         }
-        
+
     else{
       addPost({ title, author, comments });
 
@@ -124,7 +124,8 @@ const closing=()=>{
         </div>
         {isShown && (
         <Modal isShown={isShown} >
-        <p>Please enter the data</p>
+        <p className={s.modalText}>Please enter the data</p>
+        <img src={cat}alt="cat" style={{width:100}}/>
             <button
               className={s.modalButton}
               type="submit"
