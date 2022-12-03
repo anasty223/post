@@ -1,13 +1,10 @@
 import { useState } from "react";
-import s from "./TableItems.module.css"
+import s from "./TableItems.module.css";
 import { AiFillDelete } from "react-icons/ai";
 import { useUpdatePostMutation } from "../../redux/posts";
-import { toast} from "react-toastify";
+import { toast } from "react-toastify";
 import Modal from "../Modal/Modal";
 import { Oval } from "react-loader-spinner";
-
-
-
 
 export default function TableItems({ title, author, id, func, comments }) {
   const [updateContact, { isLoading }] = useUpdatePostMutation();
@@ -15,7 +12,6 @@ export default function TableItems({ title, author, id, func, comments }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newAuthor, setNewAuthor] = useState(author);
   const [newComments, setNewComments] = useState(comments);
-
 
   const toggleModal = () => {
     setIsshown(!isShown);
@@ -50,41 +46,37 @@ export default function TableItems({ title, author, id, func, comments }) {
 
     updateContact({ id, title, author, comments });
     toast.success(`${data.newTitle} post corrected!`);
-    setIsshown(false)
+    setIsshown(false);
     return;
-
   };
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
-    onFormSubmit({ id, newTitle, newAuthor,newComments });
+    onFormSubmit({ id, newTitle, newAuthor, newComments });
   };
-
 
   return (
     <>
-<thead>
-                <tr>
-
-                  <th>id of post</th>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Coments</th>
-                  <th>Delete</th>
-                  <th>Edit</th>
-                </tr>
-              </thead> 
+      <thead>
+        <tr>
+          <th>id of post</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Coments</th>
+          <th>Delete</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
 
       <tbody>
-       
-
         <tr>
-        <td> {id}</td>
+          <td> {id}</td>
           <td>{title}</td>
           <td>{author}</td>
-          <td style={{whiteSpace: "pre-wrap"}}><div >{comments}</div></td>
+          <td style={{ whiteSpace: "pre-wrap" }}>
+            <div>{comments}</div>
+          </td>
           <td>
-
             <button
               style={{
                 backgroundColor: "#4FC3A1",
@@ -98,71 +90,65 @@ export default function TableItems({ title, author, id, func, comments }) {
               <AiFillDelete size="1.2rem" fill="#fff" />
             </button>
           </td>
-          <td> 
-          
-     
-          <button type="button" onClick={toggleModal}>
-            Edit
-          </button>
-        
-       </td>
+          <td>
+            <button type="button" onClick={toggleModal}>
+              Edit
+            </button>
+          </td>
         </tr>
       </tbody>
 
-     
-
-
-
       {isShown && (
         <Modal isShown={isShown} onClose={toggleModal}>
-          <form className={s.modalForm}onSubmit={onSubmitHandler}>
+          <form className={s.modalForm} onSubmit={onSubmitHandler}>
             <label className={s.labelModal}>
               Title
               <input
                 type="text"
                 name="title"
                 value={newTitle}
-                
                 required
                 onChange={handleInputChange}
               />
             </label>
-            <label  className={s.labelModal}>
+            <label className={s.labelModal}>
               Author
               <input
                 type="text"
                 name="author"
                 value={newAuthor}
-              
                 required
                 onChange={handleInputChange}
               />
             </label>
-       
-            <label  className={s.labelModal}>
+
+            <label className={s.labelModal}>
               Comment
               <textarea
-                 className={s.inputModal}
-                 placeholder="text"
-                  type="text"
-                  name="comments"
+                className={s.inputModal}
+                placeholder="text"
+                type="text"
+                name="comments"
                 value={newComments}
                 maxlength="150"
                 required
                 onChange={handleInputChange}
               />
             </label>
-            <button className={s.modalButton} type="submit" disabled={isLoading}>
+            <button
+              className={s.modalButton}
+              type="submit"
+              disabled={isLoading}
+            >
               {isLoading ? (
                 <Oval color="#25515a" height={20} width={20} />
               ) : (
-                'OK'
+                "OK"
               )}
             </button>
           </form>
         </Modal>
       )}
-     
     </>
   );
 }

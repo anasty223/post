@@ -30,11 +30,6 @@ const persistConfig = {
 };
 const persistedReducer = persistReducer(persistConfig, todoReducer);
 
-const authPersistConfig = {
-  key: "auth",
-  storage,
-  whitelist: ["token"],
-};
 
 const store = configureStore({
   reducer: {

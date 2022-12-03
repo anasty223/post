@@ -9,12 +9,9 @@ export default function Home() {
   return (
     <div>
 
-
-
-
        <Navigation/>
       <h3 style={{color:"#fff"}}>
-        Contacts:(Viber, Telegram, WhatsApp)
+        Contacts: (Viber, Telegram, WhatsApp)
        
 
       </h3>

@@ -1,9 +1,9 @@
 import s from "./Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
-import { useAddPostMutation, useGetPostQuery, useUpdatePostMutation } from "../../redux/posts";
+import { useAddPostMutation } from "../../redux/posts";
 import { useState } from "react";
 import Filter from "../Filter/Filter";
-import { ButtonLoadMore } from "../ButtonLoadMore/ButtonLoadMore ";
+
 
 
 export default function Form({ posts }) {
@@ -74,7 +74,7 @@ export default function Form({ posts }) {
                 required
                 value={title}
                 onChange={handleInputChange}
-                maxlength="10"
+                maxlength="20"
               />
             </label>
     
@@ -88,7 +88,7 @@ export default function Form({ posts }) {
                 required
                 value={author}
                 onChange={handleInputChange}
-                maxlength="10"
+                maxlength="20"
               />
             </label>
     

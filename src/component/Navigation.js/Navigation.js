@@ -7,9 +7,7 @@ const Navigation = () => {
   return (
     <>
       <nav >
-       
-       
-            <ul className={style.navigationContainer}>
+                <ul className={style.navigationContainer}>
               <li>
                 <button type="button" className={style.buttonNav}>
                   <NavLink
