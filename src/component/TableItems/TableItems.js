@@ -63,9 +63,20 @@ export default function TableItems({ title, author, id, func, comments }) {
 
   return (
     <>
+<thead>
+                <tr>
 
-        
+                  <th>id of post</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Coments</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                </tr>
+              </thead> 
+
       <tbody>
+       
 
         <tr>
         <td> {id}</td>

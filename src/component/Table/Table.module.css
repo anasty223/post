@@ -20,6 +20,7 @@ h2{
 /* Table Styles */
 
 .table-wrapper{
+    
     margin: 10px 70px 70px;
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
@@ -28,14 +29,14 @@ h2{
     border-radius: 5px;
     font-size: 12px;
     font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
+    border:1px solid rgba( 0, 0, 0, 0.2 );
+    /* border-collapse: collapse; */
+    /* width: 100%; */
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
- height: auto;
-
+    margin-bottom:80px;
+align-items: center;
 }
 
 .flTtable td, .flTtable th {
@@ -69,6 +70,7 @@ h2{
     .flTtable {
         display: block;
         width: 100%;
+     
     }
     .table-wrapper:before{
         content: "Scroll horizontally >";
@@ -130,5 +132,5 @@ h2{
 }
 .headerTable{
     color:#fff;
-    margin-top: 150px;
+    margin-top: 80px;
   }

@@ -19,7 +19,7 @@ export default function Post() {
   const [isPending, setIsPending] = useState(false);
 
   const filter = useSelector(getFilter);
-  console.log("data", data);
+  // console.log("data", data);
 
 
  
