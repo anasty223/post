@@ -3,15 +3,17 @@ import { toast, ToastContainer } from "react-toastify";
 import { useAddPostMutation } from "../../redux/posts";
 import { useState } from "react";
 import Filter from "../Filter/Filter";
+import Modal from "../ModalEnter/Modal";
+import { Oval } from "react-loader-spinner";
 
 
+export default function Form() {
 
-export default function Form({ posts }) {
   const [addPost] = useAddPostMutation();
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [comments, setComments] = useState("");
-
+  const [isShown, setIsshown] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -38,13 +40,17 @@ export default function Form({ posts }) {
   const onSubmitForm = (e) => {
     e.preventDefault();
 
-
+    if(title.trim()==="" || author.trim() ==""){
+setIsshown(true);
+        }
+        
+    else{
       addPost({ title, author, comments });
 
       toast(({ data }) => `Added ${title} in posts`, {
         data: "world",
       });
-      
+    }
         
 
 
@@ -53,7 +59,9 @@ export default function Form({ posts }) {
     setComments("");
  
   };
-
+const closing=()=>{
+  setIsshown(false)
+}
 
   return (
 <>
@@ -114,7 +122,23 @@ export default function Form({ posts }) {
           
        
         </div>
-
+        {isShown && (
+        <Modal isShown={isShown} >
+        <p>Please enter the data</p>
+            <button
+              className={s.modalButton}
+              type="submit"
+         onClick={closing}
+            >
+             
+                <Oval color="#25515a" height={20} width={20} />
+         
+                "OK"
+             
+            </button>
+      
+        </Modal>
+      )}
   
         </>
   );
