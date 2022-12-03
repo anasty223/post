@@ -30,6 +30,7 @@ export default function Table({ posts, onDeletePost, loadMore }) {
 
 
       <table className={s.flTtable}>
+
         <div
           id="scrollableDiv"
           style={{
@@ -49,6 +50,8 @@ export default function Table({ posts, onDeletePost, loadMore }) {
             loader={<Loader/>}
             scrollableTarget="scrollableDiv"
           >
+
+            
             {posts.map(({ id, title, author, comments }) => (
               <TableItems
                 key={id}

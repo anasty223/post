@@ -38,10 +38,7 @@ export default function Form({ posts }) {
   const onSubmitForm = (e) => {
     e.preventDefault();
 
-    const returnTitle = posts.find((post) => post.title === post);
-    if (returnTitle) {
-      alert("This title is already in the posts ");
-    } else {
+
       addPost({ title, author, comments });
 
       toast(({ data }) => `Added ${title} in posts`, {
@@ -49,7 +46,7 @@ export default function Form({ posts }) {
       });
       
         
-    }
+
 
     setTitle("");
     setAuthor("");
