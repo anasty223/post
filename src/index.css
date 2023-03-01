@@ -28,3 +28,42 @@ h2{
   color: white;
   padding: 30px 0;
 }
+
+
+/* form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+
+
+ */
+
+input:valid {
+ 
+  border: 2px solid green;
+}
+input:invalid {
+  border: 1px solid red;
+  
+}
+input:focus:invalid {
+  box-shadow: none;
+}
+input:invalid {
+  box-shadow: 0 0 0.1px 0.1px red;
+}

@@ -2,7 +2,7 @@ import s from "./Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import { useAddPostMutation, useUpdatePostMutation } from "../../redux/posts";
 import { useState } from "react";
-import Filter from "../Filter/Filter";
+
 import Modal from "../ModalEnter/Modal";
 import { Oval } from "react-loader-spinner";
 import cat from "../ModalEnter/cat.jpg"
@@ -11,9 +11,10 @@ export default function Form() {
   const [updateContact, { id }] = useUpdatePostMutation();
   const [addPost] = useAddPostMutation();
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [status, setStatus] = useState("");
   const [comments, setComments] = useState("");
   const [isShown, setIsshown] = useState(false);
+  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -23,9 +24,7 @@ export default function Form() {
         setTitle(value);
         break;
 
-      case "author":
-        setAuthor(value);
-        break;
+      
       case "comments":
         setComments(value);
         break;
@@ -35,27 +34,27 @@ export default function Form() {
   };
 
 
-
+const statusAdd=()=>{
+  setStatus(!status);
+}
 
   const onSubmitForm = (e) => {
     e.preventDefault();
 
-    if(title.trim()==="" || author.trim() ==""){
-setIsshown(true);
+    if(title.trim()==="" ){
+
         }
 
     else{
-      addPost({ title, author, comments });
-
+      addPost({ title, comments });
+setStatus(true)
       toast(({ data }) => `Added ${title} in posts`, {
         data: "world",
       });
     }
-        
-
-
+ 
     setTitle("");
-    setAuthor("");
+  
     setComments("");
  
   };
@@ -73,25 +72,11 @@ const closing=()=>{
             <label className={s.labelModal}>
               Title
               <input className={s.inputModal}
-              placeholder="Title of post"
+              placeholder="enter task "
                 type="text"
                 name="title"
                 required
-                value={title}
-                onChange={handleInputChange}
-                maxlength="20"
-              />
-            </label>
-    
-            <label className={s.labelModal}>
-              Author
-              <input
-               className={s.inputModal}
-               placeholder="your name"
-                type="text"
-                name="author"
-                required
-                value={author}
+                 value={title}
                 onChange={handleInputChange}
                 maxlength="20"
               />
@@ -101,7 +86,7 @@ const closing=()=>{
             Comments
               <textarea
                className={s.inputModal}
-               placeholder="text"
+               placeholder="enter description "
                 type="text"
                 name="comments"
                 required
@@ -116,7 +101,7 @@ const closing=()=>{
           
       }
      
-          <Filter/>
+
          
           <ToastContainer closeButton={false} /> 
           
@@ -134,7 +119,7 @@ const closing=()=>{
              
                 <Oval color="#25515a" height={20} width={20} />
          
-                "OK"
+                "CLOSE"
              
             </button>
       

@@ -32,7 +32,7 @@
 
 .flTtable thead th {
     color: #ffffff;
-    background: #4FC3A1;
+    /* background: #4FC3A1; */
     word-wrap:break-word;
 }
 
@@ -54,7 +54,7 @@
         width: 100%;
     }
     .table-wrapper:before{
-        content: "Scroll horizontally >";
+        /* content: "Scroll horizontally >"; */
         display: block;
         text-align: right;
         font-size: 11px;
@@ -140,13 +140,7 @@
   flex-direction: column;
   width: 80%;
   padding: 10px;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    #4FC3A1,
-    #4FC3A1 10px,
-    rgba( 71, 147, 227, 1) 10px,
-    rgba( 71, 147, 227, 1) 20px
-  );
+
   }
   .labelModal{
     display: flex;
@@ -162,6 +156,14 @@
       
   }
   .inputModal:focus{
-    outline: 3px solid #1ac7d2;
+    /* outline: 3px solid #1ac7d2; */
     border: none;
+  }
+  .commdentWrap{
+    width: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   
   }

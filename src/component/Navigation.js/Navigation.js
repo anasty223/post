@@ -7,49 +7,24 @@ const Navigation = () => {
   return (
     <>
       <nav >
-                <ul className={style.navigationContainer}>
-              <li>
-                <button type="button" className={style.buttonNav}>
-                  <NavLink
-                  
-                    to={"/"}
-                    className={({ isActive }) =>
-                      isActive ? style.activeStyle : style.navLink
-                    }
-                  >
-                  CV
-                  </NavLink>
-                </button>
-              </li>
-              <li >
-                <button type="button" className={style.buttonNav}>
+           <div className={style.navigationContainer}>
+
+          
+                {/* <button type="button" className={style.buttonNav}> */}
                  
-                    <NavLink
+                    {/* <NavLink
                       to={"/post"}
                       className={({ isActive }) =>
                         isActive ? style.activeStyle : style.navLink
                       }
                     >
                      Posts
-                    </NavLink>
+                    </NavLink> */}
          
-                </button>
-              </li>
-              <li >
-                <button type="button" className={style.buttonNav}>
-                 
-                    <NavLink
-                      to={"/animation"}
-                      className={({ isActive }) =>
-                        isActive ? style.activeStyle : style.navLink
-                      }
-                    >
-                  Animation
-                    </NavLink>
-         
-                </button>
-              </li>
-            </ul>
+                {/* </button> */}
+       
+  
+            </div>
     
       
       </nav>

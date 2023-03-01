@@ -1,7 +1,7 @@
 
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "../Navigation.js/Navigation";
-import CVAnastasyaTrunova from "./CVAnastasyaTrunova.pdf";
+
 import style from './Home.module.css'
 export default function Home() {
   const location = useLocation();
@@ -21,7 +21,7 @@ export default function Home() {
       <li> <a href="mailto:anasty22@gmail.com">anasty22@gmail.com</a></li>
       <li>  <a href="https://github.com/anasty223">GitHub</a></li>
       </ul>
-      <object><embed src={CVAnastasyaTrunova} width="500" height="750" style={{  marginTop: 20 }}/></object>
+    
     
     </div>
   );

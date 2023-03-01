@@ -32,16 +32,20 @@
   flex-direction: column;
   font-weight: 700;
   color: #ffffff;
+ 
+
   }
   .inputModal{
-    width: 95%;
+    width: 200px;
     margin-top: 5px;
-         
+  
   }
   .inputModal:focus{
-    outline: 3px solid #1ac7d2;
+    outline: 1px solid red;
     border: none;
   }
+
+
   .buttonAdd{
     width: 40vw;
   height: 40px;
@@ -53,6 +57,7 @@
   justify-content: center;
   align-items: center;
 margin-top:20px;
+cursor: pointer;
   }
   .buttonAdd:hover {
     background-color: #cde2e5;

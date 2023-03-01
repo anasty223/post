@@ -6,16 +6,22 @@ import { toast } from "react-toastify";
 import Modal from "../Modal/Modal";
 import { Oval } from "react-loader-spinner";
 
-export default function TableItems({ title, author, id, func, comments }) {
+export default function TableItems({status,title,id, func, comments }) {
   const [updateContact, { isLoading }] = useUpdatePostMutation();
   const [isShown, setIsshown] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
-  const [newAuthor, setNewAuthor] = useState(author);
+  const [newStatus, setNewStatus] = useState(status);
   const [newComments, setNewComments] = useState(comments);
+
+  
 
   const toggleModal = () => {
     setIsshown(!isShown);
   };
+
+const statusAdd=()=>{
+  setNewStatus(!newStatus);
+}
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -25,9 +31,9 @@ export default function TableItems({ title, author, id, func, comments }) {
         setNewTitle(value);
         break;
 
-      case "author":
-        setNewAuthor(value);
-        break;
+      // case "author":
+      //   setNewAuthor(value);
+      //   break;
       case "comments":
         setNewComments(value);
         break;
@@ -40,19 +46,19 @@ export default function TableItems({ title, author, id, func, comments }) {
     const {
       id,
       newTitle: title,
-      newAuthor: author,
+      newStatus: status,
       newComments: comments,
     } = data;
 
-    updateContact({ id, title, author, comments });
-    toast.success(`${data.newTitle} post corrected!`);
+    updateContact({ id, title, newStatus, comments });
+   
     setIsshown(false);
     return;
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    onFormSubmit({ id, newTitle, newAuthor, newComments });
+    onFormSubmit({ id, newTitle, newComments });
   };
 
   return (
@@ -61,10 +67,10 @@ export default function TableItems({ title, author, id, func, comments }) {
         <tr>
           <th>id of post</th>
           <th>Title</th>
-          <th>Author</th>
-          <th>Coments</th>
+           <th>Description</th>
           <th>Delete</th>
           <th>Edit</th>
+          <th>Status</th>
         </tr>
       </thead>
 
@@ -72,11 +78,12 @@ export default function TableItems({ title, author, id, func, comments }) {
         <tr>
           <td> {id}</td>
           <td>{title}</td>
-          <td>{author}</td>
-          <td style={{ whiteSpace: "pre-wrap" }}>
-            <div>{comments}</div>
+                   <td style={{ whiteSpace: "pre-wrap" }}>
+            <div ><p className={s.commdentWrap}>{comments}</p></div>
           </td>
+        
           <td>
+            
             <button
               style={{
                 backgroundColor: "#4FC3A1",
@@ -92,49 +99,27 @@ export default function TableItems({ title, author, id, func, comments }) {
           </td>
           <td>
             <button type="button" onClick={toggleModal}>
-              Edit
+           more
             </button>
+          </td>
+     
+          <td>
+            {newStatus && newStatus?<button onClick={statusAdd} style={{backgroundColor:"green","borderRadius":"50px",color:"white",border:'none'}}>✔</button>:<button style={{backgroundColor:"red","borderRadius":"50px",color:"white",border:'none'}} onClick={statusAdd}>-</button>}
+         <div >{newStatus}</div>
           </td>
         </tr>
       </tbody>
 
       {isShown && (
         <Modal isShown={isShown} onClose={toggleModal}>
-          <form className={s.modalForm} onSubmit={onSubmitHandler}>
-            <label className={s.labelModal}>
-              Title
-              <input
-                type="text"
-                name="title"
-                value={newTitle}
-                required
-                onChange={handleInputChange}
-              />
-            </label>
-            <label className={s.labelModal}>
-              Author
-              <input
-                type="text"
-                name="author"
-                value={newAuthor}
-                required
-                onChange={handleInputChange}
-              />
-            </label>
+<form className={s.modalForm} onSubmit={onSubmitHandler}>
 
-            <label className={s.labelModal}>
-              Comment
-              <textarea
-                className={s.inputModal}
-                placeholder="text"
-                type="text"
-                name="comments"
-                value={newComments}
-                maxlength="150"
-                required
-                onChange={handleInputChange}
-              />
-            </label>
+         <ul> <li> <h3>ID:</h3><p>{id}</p></li>
+       <li><h3> TITLE:  </h3><p>{title}</p></li>
+                  
+      <li> <h3> DESCRIPTION: </h3>   <p>{comments}</p></li>
+       </ul>
+         
             <button
               className={s.modalButton}
               type="submit"
@@ -143,10 +128,11 @@ export default function TableItems({ title, author, id, func, comments }) {
               {isLoading ? (
                 <Oval color="#25515a" height={20} width={20} />
               ) : (
-                "OK"
+                "CLOSE"
               )}
             </button>
-          </form>
+            </form>
+
         </Modal>
       )}
     </>
