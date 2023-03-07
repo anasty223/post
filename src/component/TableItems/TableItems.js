@@ -2,63 +2,28 @@ import { useState } from "react";
 import s from "./TableItems.module.css";
 import { AiFillDelete } from "react-icons/ai";
 import { useUpdatePostMutation } from "../../redux/posts";
-import { toast } from "react-toastify";
 import Modal from "../Modal/Modal";
 import { Oval } from "react-loader-spinner";
 
-export default function TableItems({status,title,id, func, comments }) {
-  const [updateContact, { isLoading }] = useUpdatePostMutation();
+export default function TableItems({title,id, func, comments }) {
+  const [ { isLoading }] = useUpdatePostMutation();
   const [isShown, setIsshown] = useState(false);
-  const [newTitle, setNewTitle] = useState(title);
-  const [newStatus, setNewStatus] = useState(status);
-  const [newComments, setNewComments] = useState(comments);
 
-  
+  const [status, setStatus] = useState("");
+
 
   const toggleModal = () => {
     setIsshown(!isShown);
   };
 
 const statusAdd=()=>{
-  setNewStatus(!newStatus);
+  setStatus(!status);
 }
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-
-    switch (name) {
-      case "title":
-        setNewTitle(value);
-        break;
-
-      // case "author":
-      //   setNewAuthor(value);
-      //   break;
-      case "comments":
-        setNewComments(value);
-        break;
-      default:
-        return;
-    }
-  };
-
-  const onFormSubmit = (data) => {
-    const {
-      id,
-      newTitle: title,
-      newStatus: status,
-      newComments: comments,
-    } = data;
-
-    updateContact({ id, title, newStatus, comments });
-   
-    setIsshown(false);
-    return;
-  };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    onFormSubmit({ id, newTitle, newComments });
+
+    setIsshown(false);
   };
 
   return (
@@ -104,8 +69,8 @@ const statusAdd=()=>{
           </td>
      
           <td>
-            {newStatus && newStatus?<button onClick={statusAdd} style={{backgroundColor:"green","borderRadius":"50px",color:"white",border:'none'}}>✔</button>:<button style={{backgroundColor:"red","borderRadius":"50px",color:"white",border:'none'}} onClick={statusAdd}>-</button>}
-         <div >{newStatus}</div>
+            {status && status?<button onClick={statusAdd} style={{backgroundColor:"green","borderRadius":"50px",color:"white",border:'none'}}>✔</button>:<button style={{backgroundColor:"red","borderRadius":"50px",color:"white",border:'none'}} onClick={statusAdd}>-</button>}
+         <div >{status}</div>
           </td>
         </tr>
       </tbody>

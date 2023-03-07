@@ -16,8 +16,6 @@ function App() {
            
             <Route path="/post" element={<Post />} />
 
-   
-
             <Route path="/" element={<NotFound />} />
           </Route>
         </Routes>

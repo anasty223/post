@@ -1,6 +1,6 @@
 import s from "./Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
-import { useAddPostMutation, useUpdatePostMutation } from "../../redux/posts";
+import { useAddPostMutation} from "../../redux/posts";
 import { useState } from "react";
 
 import Modal from "../ModalEnter/Modal";
@@ -8,10 +8,8 @@ import { Oval } from "react-loader-spinner";
 import cat from "../ModalEnter/cat.jpg"
 
 export default function Form() {
-  const [updateContact, { id }] = useUpdatePostMutation();
   const [addPost] = useAddPostMutation();
   const [title, setTitle] = useState("");
-  const [status, setStatus] = useState("");
   const [comments, setComments] = useState("");
   const [isShown, setIsshown] = useState(false);
   
@@ -34,9 +32,7 @@ export default function Form() {
   };
 
 
-const statusAdd=()=>{
-  setStatus(!status);
-}
+
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -47,7 +43,7 @@ const statusAdd=()=>{
 
     else{
       addPost({ title, comments });
-setStatus(true)
+
       toast(({ data }) => `Added ${title} in posts`, {
         data: "world",
       });
